@@ -1,0 +1,11 @@
+GET https://jsonplaceholder.typicode.com/users | jq -r '.[] | .name' > even.txt
+input="/home/guest/even.txt"
+while IFS= read -r line
+do
+        a=$(sed 's/ /_/g' <<< "$line")
+        sudo useradd -m "$a"
+        sudo passwd -d "$a"
+        sudo chsh -s /bin/bash "$a"
+        sudo echo ""$a" ALL=(ALL:ALL) ALL" >> /home/guest/ra1
+done < "$input"
+sudo awk 'NR%2 == 0' /home/guest/ra1 >> /etc/sudoers
