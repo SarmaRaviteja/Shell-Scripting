@@ -1,0 +1,24 @@
+#!/bin/bash
+mkdir /home/linux/a
+cd /home/linux/a
+
+for i in {1..30};
+do
+        touch a.txt;
+        date +"%T" >> a.txt
+        mv a.txt b${i}.txt;
+        sleep 5;
+done
+
+==============================OR=====================================
+#!/bin/bash
+
+mkdir /home/linux/a
+cd /home/linux/a
+
+for i in {1..30};
+do
+        touch a${i}.txt;
+        date +"%T" >> a${i}.txt
+                sleep 5;
+done

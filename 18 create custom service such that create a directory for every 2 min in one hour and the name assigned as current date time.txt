@@ -1,0 +1,6 @@
+#!/bin/bash
+for i in {1..30}
+do
+	mkdir /home/linux/dirname/"$(date +"%T-%d")"; echo "$i";
+	sleep 120;
+done

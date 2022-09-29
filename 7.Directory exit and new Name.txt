@@ -1,0 +1,20 @@
+#!/bin/bash
+#7.sh in bash directory.
+
+echo "Enter Directory name"
+
+read fname
+
+
+if [ -d $fname ]
+then
+        echo -e "Directory Exist :\nEnter new name"
+read x
+        mkdir ${x}
+else
+        echo -e "Directory does not exists :\nEnter name"
+        read y
+        mkdir ${y}
+
+
+fi

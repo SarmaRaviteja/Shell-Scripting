@@ -1,0 +1,24 @@
+#!/bin/bash
+ #GET https://jsonplaceholder.typicode.com/users | jq -r '.[] | select(.id % 2 == 0) | .username' > even.txt
+
+ input="/home/linux/even.txt"
+
+while IFS= read -r line
+do
+        echo "$line"
+        sudo useradd -m "$line"
+        sudo passwd -d "$line"
+        sudo chsh -s /bin/bash "$line"
+        sudo echo ""$line" ALL=(ALL:ALL) ALL" >> /etc/sudoers
+done < "$input"
+
+output="/home/linux/odd.txt"
+
+
+while IFS= read -r line
+do
+        echo "$line"
+        sudo useradd -m "$line"
+        sudo passwd -d "$line"
+        sudo chsh -s /bin/bash "$line"
+done < "$output"

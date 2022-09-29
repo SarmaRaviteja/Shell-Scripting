@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sudo tar cvf /home/linux/dir/test.tar /home/linux/test
+
+sudo gzip /home/linux/dir/test.tar
+
+sudo gunzip /home/linux/dir/test.tar.gz
+
+cd /home/linux/dir
+
+sudo tar xvf test.tar
+
+#*/2    *       *       *       *       sh /home/linux/backup.sh
+~                 

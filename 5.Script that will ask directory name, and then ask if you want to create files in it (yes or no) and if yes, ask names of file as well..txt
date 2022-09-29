@@ -1,0 +1,24 @@
+
+#!/bin/bash
+
+#Script that will ask directory name, and then ask if you want to create files in it (yes or no) and if yes, ask names of file as well.
+
+echo " Create a directory name :"
+read x
+
+mkdir ${x}
+
+echo "Want to create a file inside the directory ${x}"
+
+select  yn in "Yes" "No"; do
+        case $yn in
+                Yes ) echo "Enter file Name:"
+                        read b
+                        touch ${x}/${b}
+                        break;;
+
+                No ) exit ;;
+
+        esac
+
+done

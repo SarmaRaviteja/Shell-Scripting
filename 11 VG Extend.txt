@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Enter the name of the Partition"
+read a
+
+sudo pvcreate ${a}
+sudo pvdisplay ${a}
+sudo vgcreate myvg1 ${a}
+sudo vgdisplay
+
+echo "Enter the name of the Partition to add in VG"
+read b
+
+sudo vgextend myvg1 ${b}
+sudo vgdisplay

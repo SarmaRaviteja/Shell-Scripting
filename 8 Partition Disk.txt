@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sudo fdisk /dev/sda << EOF_sda
+n
+e
+3
+
++5G
+w
+EOF_sda
+sudo mkfs.ext4 /dev/sda3
+echo -e "/dev/sda3  /home/linux/bash/b ext4 default 0 0\n" >>/etc/fstab
+sudo mount -a

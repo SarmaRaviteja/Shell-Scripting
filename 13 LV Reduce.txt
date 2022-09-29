@@ -1,0 +1,10 @@
+#!/bin/bash
+
+lsblk
+
+sudo umount -a
+e2fsck -f /dev/myvg1/mylv1
+resize2fs /dev/myvg1/mylv 6G
+lvreduce -L -6G /dev/myvg1/mylv1
+
+lsblk

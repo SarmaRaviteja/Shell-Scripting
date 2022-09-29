@@ -1,0 +1,11 @@
+#!/bin/bash
+
+GET https://jsonplaceholder.typicode.com/users | grep username | cut -d '"' -f4 >/home/linux/api.txt
+
+input="/home/linux/api.txt"
+
+while IFS= read -r line
+do
+        echo "$line"
+        sudo useradd "$line"
+done < "$input"

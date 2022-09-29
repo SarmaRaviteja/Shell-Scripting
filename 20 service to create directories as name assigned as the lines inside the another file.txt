@@ -1,0 +1,9 @@
+#!/bin/bash
+
+input="/home/linux/pg/file"
+
+while IFS= read -r line
+do
+        echo "$line"
+        sudo mkdir /home/linux/pg/"$line"
+done < "$input"

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#date
+#date +"%T"
+#date +"%r"
+#date +"%D"
+#date +"%m-%d-%Y"
+#date +"%Y-%m-%d-%H-%M-%s"
+#date "+%Y-%m-%d-%H-%M-%s"
+
+#time= date +"%r"
+
+date +"%r"
+
+#date +"%r"

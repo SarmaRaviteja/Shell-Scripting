@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "0573" | sudo -S  apt install nginx
+cd /var/www/html
+cat >> index.nginx-debian.html
+sudo service nginx
+restart
+firefox

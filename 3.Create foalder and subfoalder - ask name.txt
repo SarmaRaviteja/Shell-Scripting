@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo " Create a Parrent Directory"
+read a
+
+echo " Create a subdirectory"
+read b
+
+echo " Create a subdirectory"
+read c
+
+
+echo " Create a subdirectory for ubdirectory"
+read d
+
+echo " Create a subdirectory for subdirectory"
+read e
+
+echo " Create a file inside Parent Directory"
+read f
+
+mkdir -p ${a}/{${b},${c}} ${a}/${b}/${d} ${a}/${c}/${e} | touch ${a}/${f}
+~                                                                             

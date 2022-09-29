@@ -1,0 +1,15 @@
+#!/bin/bash
+
+sudo umount -a
+
+echo " Enter the name of the VG to remove LV"
+read a
+sudo lvremove ${a}
+
+echo " Enter the name of the VG remove"
+read b
+sudo vgremove ${b}
+
+echo " Enter the name of the PV remove"
+read c
+sudo pvremove ${c}

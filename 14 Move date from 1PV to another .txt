@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sudo umount -a
+echo "Enter the PV name to move"
+read a
+echo "Enter PV name we are moving"
+read b
+
+sudo pvmove ${a} ${b}
+
+sudo mount -a
+
+sudo vgreduce myvg1 ${a}

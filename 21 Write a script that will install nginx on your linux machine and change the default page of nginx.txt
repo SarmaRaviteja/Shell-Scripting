@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo apt update
+sudo apt install nginx
+
+#path = /var/www/html/ default location:
+
+echo  "Thank you: Bridgentech Hyderabad " >> /var/www/html/index.nginx-debian.html
+
+sudo service nginx restart

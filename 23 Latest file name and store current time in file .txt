@@ -1,0 +1,11 @@
+#! /bin/bash
+
+mkdir /home/linux/datedir
+
+while true
+do
+        touch /home/linux/datedir "$(date +"%T")"
+        echo ""$(date +"%T")"" >> /home/linux/datedir"$(date +"%T")"
+        touch /home/linux/datedir/latest
+        mv /home/linux/datedir/""$(date +"%T")"" /home/linux/datedir/latest
+done

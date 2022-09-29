@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#6.sh in bash directory
+
+echo "Enter file name"
+
+read fname
+
+
+if [ -f $fname ]
+then
+        echo -e "File exists \nEnter new name"
+read x
+        touch ${x}
+else
+        echo -e "File does not exists \nEnter name of file"
+        read y
+        touch ${y}
+
+
+fi

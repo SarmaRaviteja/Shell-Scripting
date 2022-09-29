@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Enter the size of the PE"
+read a
+
+echo "Enter the name of PV"
+read b
+echo "Enter the name of VG"
+read c
+
+sudo vgcreate ${c} -s ${a} ${b}
+
+echo "Enter the no of LE want to create"
+read x
+echo "Enter the name LV"
+read y
+echo "Enter the name of the VG"
+read z
+sudo lvcreate -l ${x} -n ${y} ${z}

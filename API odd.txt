@@ -1,0 +1,19 @@
+#!/bin/bash
+GET https://jsonplaceholder.typicode.com/users | jq -r '.[] | select(.id % 2 == 1) | .name' > odd.txt
+str="/home/linux/odd.txt"
+b="/home/linux/odd.txt"
+
+while IFS= read -r line
+do
+                sed 's/ /_/g' <<< "$line" >>odd3.txt
+done < "$b"
+
+
+output="/home/linux/odd3.txt"
+while IFS= read -r line
+do
+        echo "$line"
+        sudo useradd -m "$line"
+        sudo passwd -d "$line"
+        sudo chsh -s /bin/bash "$line"
+done < "$output"

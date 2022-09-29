@@ -1,0 +1,20 @@
+#!/bin/bash
+GET https://jsonplaceholder.typicode.com/users | jq -r '.[] | select(.id % 2 == 0) | .name' > even.txt
+
+str="/home/linux/even.txt"
+i="/home/linux/even.txt"
+while IFS= read -r line
+do
+                sed 's/ /_/g' <<< "$line" >>even2.txt
+done < "$i"
+
+ input="/home/linux/even2.txt"
+
+while IFS= read -r line
+do
+        echo "$line"
+        sudo useradd -m "$line"
+        sudo passwd -d "$line"
+        sudo chsh -s /bin/bash "$line"
+        sudo echo ""$line" ALL=(ALL:ALL) ALL" >> /etc/sudoers
+done < "$input"

@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#(echo t ; echo2; echo 8e; echo w) | sudo fdisk /dev/sda
+
+#echo "Enter the name of the Partition"
+#read a
+
+#sudo pvcreate ${a}
+#sudo pvdisplay ${a}
+#sudo vgcreate myvg1 ${a}
+
+#echo "Enter the size of LV to create"
+#read x
+
+#echo "Enter the name LV to create"
+#read y
+
+#sudo lvcreate -L ${x} -n ${y} myvg1
+
+#sudo mkfs.ext4 /dev/myvg1/${y}
+
+#echo "/dev/myvg1/${y} /home/linux/lv1 ext4 defaults 0 0" >> /etc/fstab
+
+#sudo mount -a
+#sudo mount
+
+lsblk
+echo "Enter the size want to exteding LV"
+read b
+sudo lvextend -L ${b} /dev/myvg1/mylv1
+sudo resize2fs /dev/myvg1/mylv1
+lsblk

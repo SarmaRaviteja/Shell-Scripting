@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo " Enter the user name"
+read a
+
+sudo useradd -m ${a}
+sudo passwd ${a}
+
+sudo usermod -a -Gsudo ${a}
+sudo chsh -s /bin/bash ${a}
